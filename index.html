@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB" dir="ltr">
+  <head>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+    <script>
+      (function (H) {
+        H.className = H.className.replace(/\bno-js\b/, "js");
+      })(document.documentElement);
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-detail";
+        src: url("fonts/BeausiteDetailWeb-Clear.ttf") format("truetype");
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-detail";
+        src: url("fonts/BeausiteDetailWeb-ClearItalic.ttf") format("truetype");
+        font-weight: 300;
+        font-style: italic;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-detail";
+        src: url("fonts/BeausiteDetailWeb-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-detail";
+        src: url("fonts/BeausiteDetailWeb-RegularItalic.ttf") format("truetype");
+        font-weight: 400;
+        font-style: italic;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-detail";
+        src: url("fonts/BeausiteDetailWeb-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-detail";
+        src: url("fonts/BeausiteDetailWeb-MediumItalic.ttf") format("truetype");
+        font-weight: 500;
+        font-style: italic;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-display";
+        src: url("fonts/BeausiteDisplayWeb-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-display";
+        src: url("fonts/BeausiteDisplayWeb-ThinItalic.ttf") format("truetype");
+        font-weight: 100;
+        font-style: italic;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-text";
+        src: url("fonts/BeausiteTextWeb-Light.ttf") format("truetype");
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-text";
+        src: url("fonts/BeausiteTextWeb-LightItalic.ttf") format("truetype");
+        font-weight: 300;
+        font-style: italic;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-text";
+        src: url("fonts/BeausiteTextWeb-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "beausite-text";
+        src: url("fonts/BeausiteTextWeb-BoldItalic.ttf") format("truetype");
+        font-weight: 700;
+        font-style: italic;
+        font-stretch: normal;
+        font-display: swap;
+      }
+    </style>
+    <script type="text/javascript">
+      // The below is a debounced calculation of the window's inner height,
+      // set to a CSS custom property `--vh` which tailwind uses.
+      // All of this so that we can achieve accurate screen-based heights on iOS/etc devices
+      // which let UI elements & scroll position cause the normal `100vh` to be inaccurate.
+      var resizeTimer;
+      var resizeCallback = function () {
+        console.log("resizeCallback");
+        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+        var vh = window.innerHeight * 0.01;
+        // Then we set the value in the --vh custom property to the root of the document
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      };
+
+      resizeCallback();
+
+      /**
+       * Re-calculate it on resize
+       */
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resizeCallback, 250);
+      });
+    </script>
+
+    <script type="module">
+      !(function () {
+        const e = document.createElement("link").relList;
+        if (!(e && e.supports && e.supports("modulepreload"))) {
+          for (const e of document.querySelectorAll(
+            'link[rel="modulepreload"]'
+          ))
+            r(e);
+          new MutationObserver((e) => {
+            for (const o of e)
+              if ("childList" === o.type)
+                for (const e of o.addedNodes)
+                  if ("LINK" === e.tagName && "modulepreload" === e.rel) r(e);
+                  else if (e.querySelectorAll)
+                    for (const o of e.querySelectorAll(
+                      "link[rel=modulepreload]"
+                    ))
+                      r(o);
+          }).observe(document, { childList: !0, subtree: !0 });
+        }
+        function r(e) {
+          if (e.ep) return;
+          e.ep = !0;
+          const r = (function (e) {
+            const r = {};
+            return (
+              e.integrity && (r.integrity = e.integrity),
+              e.referrerpolicy && (r.referrerPolicy = e.referrerpolicy),
+              "use-credentials" === e.crossorigin
+                ? (r.credentials = "include")
+                : "anonymous" === e.crossorigin
+                ? (r.credentials = "omit")
+                : (r.credentials = "same-origin"),
+              r
+            );
+          })(e);
+          fetch(e.href, r);
+        }
+      })();
+    </script>
+    <script
+      type="module"
+      src="js/app-Y9Nc6db2.js"
+      crossorigin=""
+      onload="e=new CustomEvent('vite-script-loaded', {detail:{path: 'src/js/app.js'}});document.dispatchEvent(e);"
+    ></script>
+    <link href="css/app-DcU71zIY.css" rel="stylesheet" />
+
+    <link href="css/phone-country.css" rel="stylesheet" />
+    <link href="css/formie-theme.css" rel="stylesheet" />
+    <title>Painter's Studio</title>
+    <meta name="X-App-Version" content="1.2.3:0" />
+
+    <style type="text/css">
+      :root {
+        --colors-grey-default: 246, 246, 245;
+        --colors-grey-dark: 224, 224, 224;
+      }
+    </style>
+  </head>
+  <body
+    x-data="app()"
+    x-on:keyup.escape="currencyChangeAlert = false"
+    class="relative flex flex-col min-h-screen bg-white text-black antialiased"
+  >
+    <a
+      href="#"
+      class="fixed left-0 top-0 px-8 py-6 z-[1000] transition-transform bg-white -translate-y-[200%] focus:translate-y-0"
+    >
+      Skip to content
+    </a>
+
+    <div up-main="" class="contents" style="--header-text-color: white">
+      <header>
+        <div
+          class="container mx-auto py-36 md:py-[60px] absolute left-1/2 -translate-x-1/2 z-10 text-headerTextColor text-16 [&_a:focus-visible]:outline-[var(--header-text-color)]"
+        >
+          <div class="flex justify-center">
+            <a
+              href="#"
+              title="Go to Painter's Studio homepage"
+              aria-label="Go to Painter's Studio homepage"
+            >
+              <svg
+                class="fill-current max-w-[180px] md:max-w-[235px] h-auto"
+                width="234"
+                height="18"
+                viewBox="0 0 234 18"
+                fill="none"
+              >
+                <text
+                  x="0"
+                  y="18"
+                  font-family="beausite-detail"
+                  font-weight="300"
+                  font-size="24"
+                  letter-spacing="4"
+                  fill="currentColor"
+                >
+                  Painter's Studio
+                </text>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <div
+          class="flex items-center relative deep:max-h-screen overflow-hidden bg-black text-headerTextColor [&_a:focus-visible]:outline-[var(--header-text-color)]"
+        >
+          <div class="w-full h-screen overflow-hidden">
+            <img
+              src="paintings/painting15.jpg"
+              alt="Local artwork"
+              class="w-full h-full object-fill object-center opacity-80"
+            />
+          </div>
+
+          <div
+            class="absolute left-0 right-0 top-1/2 -translate-y-1/2 grid--centered"
+          >
+            <a
+              class="col-span-full sm:col-span-10 sm:col-start-2 xl:col-span-14 xl:col-start-6 text-center items-center flex flex-col gap-y-24 hover:no-underline group"
+              href="#"
+              title="Find out more about the exhibition"
+              aria-label="Find out more about the exhibition"
+            >
+              <div class="flex flex-col gap-y-8">
+                <h1
+                  class="leading-none font-text font-light tracking-tight text-106 3xl:text-115"
+                >
+                  Juratan d’Alpharg
+                </h1>
+                <div
+                  class="text-58 3xl:text-62 leading-extra-tight font-text font-light tracking-tight italic"
+                >
+                  <p><i>Creator of Quantum Realism</i></p>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-lg">2025 — Montréal</p>
+              </div>
+
+              <span
+                class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14"
+              >
+                <span class="w-18 flex justify-center">
+                  <svg
+                    class="w-5 h-5 fill-current"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 17l-1.41-1.41L13.17 11H0V9h13.17l-4.58-4.59L10 3l7 7-7 7z"
+                    />
+                  </svg>
+                </span>
+                <span class="whitespace-nowrap group-hover:underline"
+                  >Find out more</span
+                >
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-y-default py-default">
+          <div
+            class="grid--centered grid-rows-[auto_auto_auto] lg:grid-rows-[auto_auto]"
+          >
+            <div
+              class="col-span-full row-start-2 row-span-1 lg:row-start-1 lg:row-span-1 lg:col-span-3 lg:col-start-10 xl:col-span-6 xl:col-start-19 2xl:col-span-5 2xl:col-start-19 flex flex-col gap-y-12 sm:gap-y-24"
+            >
+              <h2 class="hidden">Sylvia Snowden, New York (2025)</h2>
+              <p class="text-xs font-medium uppercase tracking-widest">
+                Gallery Exhibition
+              </p>
+              <a
+                href="#"
+                title="View Sylvia Snowden, New York (2025)"
+                aria-label="View Sylvia Snowden, New York (2025)"
+                class="flex flex-col gap-y-8"
+              >
+                <p
+                  id="title-sylvia-snowden-new-york-2025"
+                  class="!leading-none font-text font-light tracking-tight text-2xl 3xl:text-3xl"
+                >
+                  Sylvia Snowden
+                </p>
+                <div
+                  class="text-22 3xl:text-xl !leading-extra-tight font-text font-light tracking-tight italic"
+                >
+                  <p>On the Verge</p>
+                </div>
+              </a>
+              <div>
+                <p class="text-14">6 November  19 December 2025</p>
+                <p class="text-14 font-medium">
+                  <a
+                    href="#"
+                    title="View New York gallery"
+                    aria-label="View New York gallery"
+                  >
+                    New York
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-span-full row-start-3 row-span-1 lg:row-start-2 lg:row-span-1 lg:col-span-3 lg:col-start-10 xl:col-span-6 xl:col-start-19 2xl:col-span-5 2xl:col-start-19 lg:self-end flex flex-col items-start gap-24 lg:gap-32 mt-18 sm:mt-24 lg:mt-32"
+            >
+              <div class="hidden sm:block text-sm">
+                <p>
+                  Sylvia Snowden (b. 1942, North Carolina) lives and works in
+                  Washington, DC. Over a six-decade-long career, the artist has
+                  developed a psychologically charged painting practice that
+                  addresses subjects often overlooked by society while pursuing
+                  a broader ambition: to capture the essence of the human
+                  spirit.
+                </p>
+              </div>
+
+              <a
+                class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline"
+                href="#"
+                target="_self"
+                title="Learn more about Sylvia Snowden, New York (2025)"
+                id="title-sylvia-snowden-new-york-2025-link"
+                aria-labelledby="title-sylvia-snowden-new-york-2025 title-sylvia-snowden-new-york-2025-link"
+              >
+                <span class="w-18 justify-center hidden xs:flex">
+                  <svg
+                    class="fill-current"
+                    width="15"
+                    height="12"
+                    viewBox="0 0 15 12"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                    ></path></svg
+                ></span>
+                <span>Visit exhibition</span>
+              </a>
+            </div>
+            <div
+              class="col-span-full row-start-1 row-span-1 lg:row-start-1 lg:row-span-2 lg:col-span-8 lg:col-start-1 xl:col-span-17 xl:col-start-1 mb-24 sm:mb-32 lg:mb-0"
+            >
+              <a
+                href="#"
+                title="View Sylvia Snowden, New York (2025)"
+                aria-label="View Sylvia Snowden, New York (2025)"
+                tabindex="-1"
+              >
+                <img
+                  class="w-full"
+                  src="paintings/painting5.jpg"
+                  width="960"
+                  height="540"
+                  alt="Local artwork"
+                  sizes="100vw, (min-width: 1024px) 50vw, (min-width: 1280px) 75vw"
+                />
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div
+            class="grid--centered grid-rows-[auto_auto_auto] lg:grid-rows-[auto_auto]"
+          >
+            <div
+              class="col-span-full row-start-2 row-span-1 lg:row-start-1 lg:row-span-1 lg:col-span-3 lg:col-start-1 xl:col-span-6 xl:col-start-1 2xl:col-span-5 2xl:col-start-1 flex flex-col gap-y-12 sm:gap-y-24"
+            >
+              <h2 class="hidden">Thresholds, Hong Kong (2025)</h2>
+              <p class="text-xs font-medium uppercase tracking-widest">
+                Gallery Exhibition
+              </p>
+              <a
+                href="#"
+                title="View Thresholds, Hong Kong (2025)"
+                aria-label="View Thresholds, Hong Kong (2025)"
+                class="flex flex-col gap-y-8"
+              >
+                <p
+                  id="title-thresholds-hong-kong-2025"
+                  class="!leading-none font-text font-light tracking-tight text-2xl 3xl:text-3xl italic"
+                >
+                  Thresholds
+                </p>
+                <div
+                  class="text-22 3xl:text-xl !leading-extra-tight font-text font-light tracking-tight italic"
+                >
+                  <p>
+                    Curated by <br />
+                    Galuh Sukardi
+                  </p>
+                </div>
+              </a>
+              <div>
+                <p class="text-14">31 October 2025  10 January 2026</p>
+                <p class="text-14 font-medium">
+                  <a
+                    href="#"
+                    title="View Hong Kong gallery"
+                    aria-label="View Hong Kong gallery"
+                  >
+                    Hong Kong
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-span-full row-start-3 row-span-1 lg:row-start-2 lg:row-span-1 lg:col-span-3 lg:col-start-1 xl:col-span-6 xl:col-start-1 2xl:col-span-5 2xl:col-start-1 lg:self-end flex flex-col items-start gap-24 lg:gap-32 mt-18 sm:mt-24 lg:mt-32"
+            >
+              <div class="hidden sm:block text-sm">
+                <p>
+                  ‘Thresholds’ brings together the work of nine artists who
+                  chart their individual spiritual, political, physical or
+                  mythological journeys of transformation. Forming a chorus of
+                  unique experiences, all of which are shaped by the crossing of
+                  a ‘threshold’, the works selected reflect an understanding of
+                  the coexistence of light and dark; a dynamic whereby opposite
+                  forces are not at odds but in balance.<br />
+                </p>
+              </div>
+
+              <a
+                class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline"
+                href="#"
+                target="_self"
+                title="Learn more about Thresholds, Hong Kong (2025)"
+                id="title-thresholds-hong-kong-2025-link"
+                aria-labelledby="title-thresholds-hong-kong-2025 title-thresholds-hong-kong-2025-link"
+              >
+                <span class="w-18 justify-center hidden xs:flex">
+                  <svg
+                    class="fill-current"
+                    width="15"
+                    height="12"
+                    viewBox="0 0 15 12"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                    ></path></svg
+                ></span>
+                <span>Visit exhibition</span>
+              </a>
+            </div>
+            <div
+              class="col-span-full row-start-1 row-span-1 lg:row-start-1 lg:row-span-2 lg:col-span-8 lg:col-start-5 xl:col-span-17 xl:col-start-8 mb-24 sm:mb-32 lg:mb-0"
+            >
+              <a
+                href="#"
+                title="View Thresholds, Hong Kong (2025)"
+                aria-label="View Thresholds, Hong Kong (2025)"
+                tabindex="-1"
+              >
+                <img
+                  class="w-full lazyload lazyload-up"
+                  src="paintings/painting3.jpg"
+                  width="960"
+                  height="540"
+                  alt="Local artwork"
+                  sizes="100vw, (min-width: 1024px) 50vw, (min-width: 1280px) 75vw"
+                />
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div
+            class="grid--centered grid-rows-[auto_auto_auto] lg:grid-rows-[auto_auto]"
+          >
+            <div
+              class="col-span-full row-start-2 row-span-1 lg:row-start-1 lg:row-span-1 lg:col-span-3 lg:col-start-10 xl:col-span-6 xl:col-start-19 2xl:col-span-5 2xl:col-start-19 flex flex-col gap-y-12 sm:gap-y-24"
+            >
+              <h2 class="hidden">
+                Enrico David, Painter's Studio Paris (2025)
+              </h2>
+              <p class="text-xs font-medium uppercase tracking-widest">
+                Gallery Exhibition
+              </p>
+              <a
+                href="#"
+                title="View Enrico David, Painter's Studio Paris (2025)"
+                aria-label="View Enrico David, Painter's Studio Paris (2025)"
+                class="flex flex-col gap-y-8"
+              >
+                <p
+                  id="title-enrico-david-paris-2025"
+                  class="!leading-none font-text font-light tracking-tight text-2xl 3xl:text-3xl"
+                >
+                  Enrico David
+                </p>
+                <div
+                  class="text-22 3xl:text-xl !leading-extra-tight font-text font-light tracking-tight italic"
+                >
+                  <p>The Soul Drains the Hand</p>
+                </div>
+              </a>
+              <div>
+                <p class="text-14">21 October  19 December 2025</p>
+                <p class="text-14 font-medium">
+                  <a
+                    href="#"
+                    title="View Paris gallery"
+                    aria-label="View Paris gallery"
+                  >
+                    Paris
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-span-full row-start-3 row-span-1 lg:row-start-2 lg:row-span-1 lg:col-span-3 lg:col-start-10 xl:col-span-6 xl:col-start-19 2xl:col-span-5 2xl:col-start-19 lg:self-end flex flex-col items-start gap-24 lg:gap-32 mt-18 sm:mt-24 lg:mt-32"
+            >
+              <div class="hidden sm:block text-sm">
+                <p>
+                  ‘The Soul Drains the Hand’ marks Enrico David’s debut solo
+                  exhibition in Paris, presenting over 20 new works across
+                  sculpture, textile and works on paper. The exhibition’s title
+                  overturns the well-worn formula of artistic creation: rather
+                  than the hand behaving as the channel of the soul, it is the
+                  soul that burdens and exhausts the artist’s hand. This
+                  inversion resonates with the artist’s ongoing meditation on
+                  the porous boundary between inner life and outer form, and on
+                  the emotional toll exacted when material is tasked with giving
+                  shape to the immaterial.
+                </p>
+              </div>
+
+              <a
+                class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline"
+                href="#"
+                target="_self"
+                title="Learn more about Enrico David, Painter's Studio Paris (2025)"
+                id="title-enrico-david-paris-2025-link"
+                aria-labelledby="title-enrico-david-paris-2025 title-enrico-david-paris-2025-link"
+              >
+                <span class="w-18 justify-center hidden xs:flex">
+                  <svg
+                    class="fill-current"
+                    width="15"
+                    height="12"
+                    viewBox="0 0 15 12"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                    ></path></svg
+                ></span>
+                <span>Visit exhibition</span>
+              </a>
+            </div>
+            <div
+              class="col-span-full row-start-1 row-span-1 lg:row-start-1 lg:row-span-2 lg:col-span-8 lg:col-start-1 xl:col-span-17 xl:col-start-1 mb-24 sm:mb-32 lg:mb-0"
+            >
+              <a
+                href="#"
+                title="View Enrico David, Painter's Studio Paris (2025)"
+                aria-label="View Enrico David, Painter's Studio Paris (2025)"
+                tabindex="-1"
+              >
+                <img
+                  class="w-full lazyload lazyload-up"
+                  src="paintings/painting9.jpg"
+                  width="960"
+                  height="540"
+                  alt="Local artwork"
+                  sizes="100vw, (min-width: 1024px) 50vw, (min-width: 1280px) 75vw"
+                />
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div
+            class="grid--viewport-width lg:max-h-[630px] overflow-hidden bg-black text-white"
+          >
+            <div
+              class="col-span-full lg:col-span-8 lg:col-start-1 xl:col-span-17 xl:col-start-1"
+            >
+              <img
+                class="w-full h-auto min-h-full object-cover object-center lazyload lazyload-up"
+                src="paintings/painting12.jpg"
+                width="960"
+                height="540"
+                alt="Local artwork"
+                sizes="100vw, (min-width: 1024px) 75vw"
+              />
+            </div>
+            <div
+              class="col-span-2 col-start-2 sm:col-span-8 sm:col-start-2 lg:col-span-4 lg:col-start-10 xl:col-span-7 xl:col-start-19 py-56 xl:py-110 flex flex-col gap-y-24 md:gap-y-32"
+            >
+              <div class="flex flex-col gap-y-12 sm:gap-y-18">
+                <p class="text-xs font-medium uppercase tracking-widest">
+                  Salon
+                </p>
+                <h2 class="h2">Doris Salcedo</h2>
+              </div>
+              <div class="max-w-[38ch]">
+                <p>
+                  We invite you to explore our current online presentation of
+                  secondary market work in our monthly Salon programme. To date,
+                  the gallery’s secondary market presentations have included
+                  notable artworks by Jean-Michel Basquiat, Alexander Calder,
+                  Carmen Herrera and Andy Warhol among others.
+                </p>
+              </div>
+
+              <a
+                class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline"
+                href="#whitecube.com/salon/doris-salcedo"
+                target="_self"
+                title="Read more about Doris Salcedo"
+                aria-label="Read more about Doris Salcedo"
+              >
+                <span class="w-18 justify-center hidden xs:flex">
+                  <svg
+                    class="fill-current"
+                    width="15"
+                    height="12"
+                    viewBox="0 0 15 12"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                    ></path></svg
+                ></span>
+                <span>Explore online</span>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div
+            class="grid--centered grid-rows-[auto_auto_auto] lg:grid-rows-[auto_auto]"
+          >
+            <div
+              class="col-span-full row-start-1 row-span-1 lg:col-span-3 lg:col-start-1 xl:col-span-5 xl:col-start-1 flex flex-col gap-y-12 sm:gap-y-18 mb-40 lg:mb-0"
+            >
+              <span class="text-xs font-medium uppercase tracking-widest"
+                >In the Studio</span
+              >
+              <h2 class="h2">Enrico David</h2>
+            </div>
+            <div
+              class="col-span-full row-start-3 row-span-1 lg:row-start-2 lg:row-span-1 lg:col-span-3 lg:col-start-1 xl:col-span-5 xl:col-start-1 lg:self-end flex flex-col gap-y-24 lg:mt-32"
+            >
+              <div class="text-sm">
+                <p>
+                  From his home and studio in London, Enrico David discusses his
+                  creative process, detailing the role the drawing plays, the
+                  importance of collaboration and his approach to moulding and
+                  shaping materials.
+                </p>
+              </div>
+
+              <a
+                class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline"
+                href="#"
+                title="Find out more about Enrico David‘s exhibition at Painter's Studio Paris"
+                aria-label="Find out more about Enrico David‘s exhibition at Painter's Studio Paris"
+              >
+                <span class="w-18 justify-center hidden xs:flex">
+                  <svg
+                    class="fill-current"
+                    width="15"
+                    height="12"
+                    viewBox="0 0 15 12"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                    ></path></svg
+                ></span>
+                <span
+                  >Find out more about Enrico David‘s exhibition at Painter's
+                  Studio Paris</span
+                >
+              </a>
+            </div>
+            <div
+              class="col-span-full row-start-2 row-span-1 lg:row-start-1 lg:row-span-2 lg:col-span-8 lg:col-start-5 xl:col-span-17 xl:col-start-8 mb-24 lg:mb-0"
+            >
+              <div
+                x-data="{ play : false }"
+                class="relative h-0 overflow-hidden w-full"
+                style="padding-bottom: 56.25%"
+              >
+                <button
+                  @click.stop="play = true"
+                  x-show="!play"
+                  aria-label="Play video"
+                  class="group"
+                >
+                  <img
+                    src="paintings/painting7.jpg"
+                    class="absolute inset-0 top-1/2 -translate-y-1/2 w-full"
+                    alt="Local artwork"
+                  />
+                  <svg
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-1 fill-white group-focus-visible:outline-1 group-focus-visible:outline-white group-focus-visible:outline-dotted"
+                    width="33"
+                    height="33"
+                    viewBox="0 0 33 33"
+                    fill="none"
+                  >
+                    <rect
+                      x="9.49902"
+                      y="9.77759"
+                      width="13.8018"
+                      height="16.2761"
+                      fill="white"
+                    ></rect>
+                    <path
+                      d="M16.542 1.41138C18.6819 1.41138 20.6997 1.81749 22.5898 2.63306C24.4704 3.44455 26.1113 4.54904 27.5078 5.94556C28.9043 7.34207 30.0088 8.98293 30.8203 10.8635C31.6359 12.7537 32.042 14.7714 32.042 16.9114C32.042 19.0353 31.6358 21.045 30.8203 22.9348C30.0597 24.6975 29.0419 26.253 27.7676 27.5979L27.5088 27.8635C26.1122 29.2687 24.4711 30.3779 22.5898 31.1897C20.6997 32.0053 18.6819 32.4114 16.542 32.4114C14.4181 32.4114 12.4083 32.0052 10.5186 31.1897C8.7553 30.4288 7.19948 29.4071 5.85449 28.1252L5.58789 27.8655C4.18347 26.4608 3.07531 24.8157 2.26367 22.9348C1.44822 21.045 1.04199 19.0353 1.04199 16.9114C1.04199 14.7714 1.4481 12.7537 2.26367 10.8635C3.07544 8.98229 4.1847 7.34119 5.58984 5.94458L5.85547 5.68579C7.20037 4.4115 8.75584 3.39371 10.5186 2.63306C12.4083 1.8176 14.4181 1.41138 16.542 1.41138ZM13.3672 22.4973L22.1133 16.9114L13.3672 11.3245V22.4973Z"
+                      fill="currentColor"
+                      stroke="white"
+                    ></path>
+                  </svg>
+                </button>
+                <template x-if="play">
+                  <iframe
+                    class="w-full h-full absolute inset-0"
+                    src="://player.vimeo.com/video/1123959533?h=b47c8b0976&app_id=122963&playsinline=1&autoplay=1&texttrack=en-GB"
+                    title="In The Studio: Enrico David"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; fullscreen; gyroscope; picture-in-picture, playsinline"
+                  ></iframe>
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="grid--viewport-width overflow-hidden lg:max-h-[765px] bg-grey relative"
+          >
+            <div
+              class="col-span-full lg:row-span-1 lg:row-start-1 lg:col-span-8 xl:col-span-17 lg:col-start-1 xl:col-start-1"
+            >
+              <a
+                tabindex="-1"
+                aria-hidden="true"
+                class="block"
+                href="#painters-studio.com/shop/cai-guo-qiang-gunpowder-and-abstraction-2015-2025"
+                title="View Cai Guo-Qiang ‘Gunpowder and Abstraction 2015-2025’ product"
+              >
+                <img
+                  src="paintings/painting8.jpg"
+                  alt="Local artwork"
+                  title=""
+                />
+              </a>
+            </div>
+
+            <div
+              class="relative z-10 col-span-2 col-start-2 sm:col-span-8 sm:col-start-2 lg:row-span-1 lg:row-start-1 lg:col-span-4 xl:col-span-6 lg:col-start-10 xl:col-start-19 py-56 xl:py-110 flex flex-col gap-y-24 md:gap-y-32"
+            >
+              <div class="flex flex-col gap-y-12 sm:gap-y-18">
+                <p class="text-xs font-medium uppercase tracking-widest">
+                  New In
+                </p>
+                <h2 id="feature-new-in" class="h2">
+                  Cai Guo-Qiang ‘Gunpowder and Abstraction 2015-2025’
+                </h2>
+              </div>
+              <p class="font-medium">£50</p>
+              <div class="text-sm">
+                <p>
+                  Published to mark Cai Guo-Qiang's solo exhibition at Painter's
+                  Studio Bermondsey, this catalogue charts a decade of the
+                  artist’s experimentation with gunpowder.
+                </p>
+              </div>
+
+              <a
+                class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline"
+                href="#painters-studio.com/shop/cai-guo-qiang-gunpowder-and-abstraction-2015-2025"
+                target="_self"
+                title="View Cai Guo-Qiang ‘Gunpowder and Abstraction 2015-2025’ product"
+                id="feature-new-in-link"
+                aria-labelledby="feature-new-in feature-new-in-link"
+              >
+                <span class="w-18 justify-center hidden xs:flex">
+                  <svg
+                    class="fill-current"
+                    width="15"
+                    height="12"
+                    viewBox="0 0 15 12"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                    ></path></svg
+                ></span>
+                <span>Purchase</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid--centered">
+            <div
+              id="news-latest-news"
+              class="col-span-full flex flex-wrap gap-24 mb-32 md:mb-48 justify-between"
+            >
+              <h2 class="w-full section-title group">
+                <span class="relative"> Latest News</span>
+              </h2>
+
+              <a
+                class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline"
+                href="#"
+                id="news-latest-news-link"
+                aria-labelledby="news-latest-news news-latest-news-link"
+              >
+                <span class="w-18 justify-center hidden xs:flex">
+                  <svg
+                    class="fill-current"
+                    width="15"
+                    height="12"
+                    viewBox="0 0 15 12"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                    ></path></svg
+                ></span>
+                <span>View all news</span>
+              </a>
+            </div>
+            <div
+              class="col-span-full grid grid-cols-2 gap-x-32 md:gap-x-1col xl:gap-x-1col gap-y-48 md:grid-cols-3 xl:grid-cols-5 md:gap-y-80"
+            >
+              <div class="w-full lg:w-full flex flex-col items-start gap-y-24">
+                <a
+                  class="w-full"
+                  href="#"
+                  title="Read Al Held at the Guggenheim Bilbao article"
+                  aria-label="Read Al Held at the Guggenheim Bilbao article"
+                  aria-hidden="true"
+                  tabindex="-1"
+                >
+                  <img
+                    class="w-full lazyload lazyload-up"
+                    src="paintings/painting9.jpg"
+                    width="360"
+                    height="360"
+                    alt="Local artwork"
+                    sizes="100vw, (min-width: 1024px) 50vw, (min-width: 1280px) 25vw"
+                  />
+                </a>
+
+                <div class="flex flex-col gap-y-12 sm:gap-y-18">
+                  <a
+                    class="text-xs font-medium uppercase tracking-widest"
+                    href="#"
+                    title="View Announcement archive"
+                    aria-label="View Announcement archive"
+                    >Announcement</a
+                  >
+                  <h3
+                    class="font-text text-20 font-light leading-snug underline-offset-4"
+                  >
+                    <a
+                      href="#"
+                      title="Read Al Held at the Guggenheim Bilbao article"
+                      aria-label="Read Al Held at the Guggenheim Bilbao article"
+                      >Al Held at the Guggenheim Bilbao</a
+                    >
+                  </h3>
+                </div>
+
+                <div class="text-sm">
+                  <p>Bilbao, Spain</p>
+                </div>
+                <div class="text-sm">
+                  <p>Posted: 7 November 2025</p>
+                </div>
+              </div>
+
+              <div class="w-full lg:w-full flex flex-col items-start gap-y-24">
+                <a
+                  class="w-full"
+                  href="#"
+                  title="Read Tiona Nekkia McClodden at Dia Chelsea article"
+                  aria-label="Read Tiona Nekkia McClodden at Dia Chelsea article"
+                  aria-hidden="true"
+                  tabindex="-1"
+                >
+                  <img
+                    class="w-full lazyload lazyload-up"
+                    src="paintings/painting10.jpg"
+                    width="360"
+                    height="360"
+                    alt="Local artwork"
+                    sizes="100vw, (min-width: 1024px) 50vw, (min-width: 1280px) 25vw"
+                  />
+                </a>
+
+                <div class="flex flex-col gap-y-12 sm:gap-y-18">
+                  <a
+                    class="text-xs font-medium uppercase tracking-widest"
+                    href="#"
+                    title="View Events archive"
+                    aria-label="View Events archive"
+                    >Events</a
+                  >
+                  <h3
+                    class="font-text text-20 font-light leading-snug underline-offset-4"
+                  >
+                    <a
+                      href="#"
+                      title="Read Tiona Nekkia McClodden at Dia Chelsea article"
+                      aria-label="Read Tiona Nekkia McClodden at Dia Chelsea article"
+                      >Tiona Nekkia McClodden at Dia Chelsea</a
+                    >
+                  </h3>
+                </div>
+
+                <div class="text-sm">
+                  <p>12 November 2025 | New York</p>
+                </div>
+              </div>
+
+              <div class="w-full lg:w-full flex flex-col items-start gap-y-24">
+                <a
+                  class="w-full"
+                  href="#"
+                  title="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                  aria-label="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                  aria-hidden="true"
+                  tabindex="-1"
+                >
+                  <img
+                    class="w-full lazyload lazyload-up"
+                    src="paintings/painting11.jpg"
+                    width="360"
+                    height="360"
+                    alt="Local artwork"
+                    sizes="100vw, (min-width: 1024px) 50vw, (min-width: 1280px) 25vw"
+                  />
+                </a>
+
+                <div class="flex flex-col gap-y-12 sm:gap-y-18">
+                  <a
+                    class="text-xs font-medium uppercase tracking-widest"
+                    href="#"
+                    title="View Events archive"
+                    aria-label="View Events archive"
+                    >Events</a
+                  >
+                  <h3
+                    class="font-text text-20 font-light leading-snug underline-offset-4"
+                  >
+                    <a
+                      href="#"
+                      title="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                      aria-label="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                      >Christian Marclay at Huddersfield Contemporary Music
+                      Festival 2025</a
+                    >
+                  </h3>
+                </div>
+
+                <div class="text-sm">
+                  <p>22 November 2025 | Huddersfield, UK</p>
+                </div>
+              </div>
+              <div class="w-full lg:w-full flex flex-col items-start gap-y-24">
+                <a
+                  class="w-full"
+                  href="#"
+                  title="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                  aria-label="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                  aria-hidden="true"
+                  tabindex="-1"
+                >
+                  <img
+                    class="w-full lazyload lazyload-up"
+                    src="paintings/painting12.jpg"
+                    width="360"
+                    height="360"
+                    alt="Local artwork"
+                    sizes="100vw, (min-width: 1024px) 50vw, (min-width: 1280px) 25vw"
+                  />
+                </a>
+
+                <div class="flex flex-col gap-y-12 sm:gap-y-18">
+                  <a
+                    class="text-xs font-medium uppercase tracking-widest"
+                    href="#"
+                    title="View Events archive"
+                    aria-label="View Events archive"
+                    >Events</a
+                  >
+                  <h3
+                    class="font-text text-20 font-light leading-snug underline-offset-4"
+                  >
+                    <a
+                      href="#"
+                      title="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                      aria-label="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                      >Christian Marclay at Huddersfield Contemporary Music
+                      Festival 2025</a
+                    >
+                  </h3>
+                </div>
+
+                <div class="text-sm">
+                  <p>22 November 2025 | Huddersfield, UK</p>
+                </div>
+              </div>
+              <div class="w-full lg:w-full flex flex-col items-start gap-y-24">
+                <a
+                  class="w-full"
+                  href="#"
+                  title="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                  aria-label="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                  aria-hidden="true"
+                  tabindex="-1"
+                >
+                  <img
+                    class="w-full lazyload lazyload-up"
+                    src="paintings/painting13.jpg"
+                    width="360"
+                    height="360"
+                    alt="Local artwork"
+                    sizes="100vw, (min-width: 1024px) 50vw, (min-width: 1280px) 25vw"
+                  />
+                </a>
+
+                <div class="flex flex-col gap-y-12 sm:gap-y-18">
+                  <a
+                    class="text-xs font-medium uppercase tracking-widest"
+                    href="#"
+                    title="View Events archive"
+                    aria-label="View Events archive"
+                    >Events</a
+                  >
+                  <h3
+                    class="font-text text-20 font-light leading-snug underline-offset-4"
+                  >
+                    <a
+                      href="#"
+                      title="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                      aria-label="Read Christian Marclay at Huddersfield Contemporary Music Festival 2025 article"
+                      >Christian Marclay at Huddersfield Contemporary Music
+                      Festival 2025</a
+                    >
+                  </h3>
+                </div>
+
+                <div class="text-sm">
+                  <p>22 November 2025 | Huddersfield, UK</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="bg-white border-t border-grey-dark">
+        <div class="border-b border-grey-dark">
+          <div class="grid--centered py-40 md:py-80">
+            <div class="col-span-full" up-nav="">
+              <ul
+                class="flex flex-wrap lg:flex-nowrap items-start justify-between gap-y-32 gap-x-18 md:gap-y-40 text-base font-light"
+              >
+                <li
+                  class="w-[calc(50%_-_9px)] sm:w-[calc(33.3333%_-_12px)] md:w-[calc(25%_-_14px)] lg:w-auto"
+                >
+                  <a href="#">About</a>
+                  <ul
+                    class="flex flex-col gap-y-12 md:gap-y-20 text-sm mt-12 md:mt-24"
+                  >
+                    <li>
+                      <a href="#">Locations</a>
+                    </li>
+                    <li>
+                      <a href="#">Careers</a>
+                    </li>
+                    <li>
+                      <a href="#">Sustainability</a>
+                    </li>
+                    <li>
+                      <a href="#">Contact</a>
+                    </li>
+                    <li>
+                      <a href="#">Phishing Notice</a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="w-[calc(50%_-_9px)] sm:w-[calc(33.3333%_-_12px)] md:w-[calc(25%_-_14px)] lg:w-auto"
+                >
+                  <a href="#">Artists</a>
+                </li>
+                <li
+                  class="w-[calc(50%_-_9px)] sm:w-[calc(33.3333%_-_12px)] md:w-[calc(25%_-_14px)] lg:w-auto"
+                >
+                  <a href="#">Collect</a>
+                  <ul
+                    class="flex flex-col gap-y-12 md:gap-y-20 text-sm mt-12 md:mt-24"
+                  >
+                    <li>
+                      <a href="#">Create Account</a>
+                    </li>
+                    <li>
+                      <a href="#">Available Artworks</a>
+                    </li>
+                    <li>
+                      <a href="#">Prints & Multiples</a>
+                    </li>
+                    <li>
+                      <a href="#">Consignments</a>
+                    </li>
+                    <li>
+                      <a href="#">Salon</a>
+                    </li>
+                    <li>
+                      <a href="#">Art Fairs</a>
+                    </li>
+                    <li>
+                      <a href="#">Online Terms of Sale</a>
+                    </li>
+                    <li><a href="#">FAQs</a></li>
+                  </ul>
+                </li>
+                <li
+                  class="w-[calc(50%_-_9px)] sm:w-[calc(33.3333%_-_12px)] md:w-[calc(25%_-_14px)] lg:w-auto"
+                >
+                  <a href="#">Exhibitions</a>
+                  <ul
+                    class="flex flex-col gap-y-12 md:gap-y-20 text-sm mt-12 md:mt-24"
+                  >
+                    <li>
+                      <a href="#">London</a>
+                    </li>
+                    <li>
+                      <a href="#">Hong Kong</a>
+                    </li>
+                    <li>
+                      <a href="#">New York</a>
+                    </li>
+                    <li>
+                      <a href="#">Paris</a>
+                    </li>
+                    <li>
+                      <a href="#">Seoul</a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="w-[calc(50%_-_9px)] sm:w-[calc(33.3333%_-_12px)] md:w-[calc(25%_-_14px)] lg:w-auto"
+                >
+                  <a href="#">News</a>
+                  <ul
+                    class="flex flex-col gap-y-12 md:gap-y-20 text-sm mt-12 md:mt-24"
+                  >
+                    <li>
+                      <a href="#">Press Releases</a>
+                    </li>
+                    <li>
+                      <a href="#">Events</a>
+                    </li>
+                    <li>
+                      <a href="#">Museum Exhibitions</a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="w-[calc(50%_-_9px)] sm:w-[calc(33.3333%_-_12px)] md:w-[calc(25%_-_14px)] lg:w-auto"
+                >
+                  <a href="#">Bookshop</a>
+                  <ul
+                    class="flex flex-col gap-y-12 md:gap-y-20 text-sm mt-12 md:mt-24"
+                  >
+                    <li>
+                      <a href="#">Publications</a>
+                    </li>
+                    <li>
+                      <a href="#">Everything Else</a>
+                    </li>
+                    <li>
+                      <a href="#">Online Terms of Sale</a>
+                    </li>
+                    <li><a href="#">Bookshop FAQs</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="border-b border-grey-dark">
+          <div class="grid--centered py-40 md:py-80">
+            <div class="col-span-full">
+              <h2 class="text-lg font-light mb-16">
+                <a
+                  href="#"
+                  title="View Painter's Studio gallery locations"
+                  aria-label="View Painter's Studio gallery locations"
+                  >Locations</a
+                >
+              </h2>
+              <div
+                class="flex flex-col sm:flex-row flex-wrap xl:flex-nowrap gap-y-24 gap-x-18 md:gap-y-32"
+              >
+                <div
+                  class="sm:w-[calc(50%_-_9px)] md:w-[calc(33.3333%_-_12px)] xl:w-[calc(16.666667%_-_18px)] text-sm font-light"
+                >
+                  <h3 id="painters-studio-bermondsey">Bermondsey, London</h3>
+                  <address>
+                    <p>
+                      144–152 Bermondsey Street <br />
+                      London SE1 3TQ<br />
+                    </p>
+                  </address>
+
+                  <a
+                    class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline mt-12"
+                    href="#"
+                    target="_self"
+                    title="Learn more about Painter's Studio Bermondsey"
+                    id="painters-studio-bermondsey-link"
+                    aria-labelledby="painters-studio-bermondsey painters-studio-bermondsey-link"
+                  >
+                    <span class="w-18 justify-center hidden xs:flex">
+                      <svg
+                        class="fill-current"
+                        width="15"
+                        height="12"
+                        viewBox="0 0 15 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                        ></path></svg
+                    ></span>
+                    <span>Visit</span>
+                  </a>
+                </div>
+                <div
+                  class="sm:w-[calc(50%_-_9px)] md:w-[calc(33.3333%_-_12px)] xl:w-[calc(16.666667%_-_18px)] text-sm font-light"
+                >
+                  <h3 id="painters-studio-masons-yard">Mason’s Yard, London</h3>
+                  <address>
+                    <p>
+                      25–26 Mason’s Yard <br />
+                      London SW1Y 6BU<br />
+                    </p>
+                  </address>
+
+                  <a
+                    class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline mt-12"
+                    href="#"
+                    target="_self"
+                    title="Learn more about Painter's Studio Mason’s Yard"
+                    id="painters-studio-masons-yard-link"
+                    aria-labelledby="painters-studio-masons-yard painters-studio-masons-yard-link"
+                  >
+                    <span class="w-18 justify-center hidden xs:flex">
+                      <svg
+                        class="fill-current"
+                        width="15"
+                        height="12"
+                        viewBox="0 0 15 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                        ></path></svg
+                    ></span>
+                    <span>Visit</span>
+                  </a>
+                </div>
+                <div
+                  class="sm:w-[calc(50%_-_9px)] md:w-[calc(33.3333%_-_12px)] xl:w-[calc(16.666667%_-_18px)] text-sm font-light"
+                >
+                  <h3 id="painters-studio-new-york">New York</h3>
+                  <address>
+                    <div>1002 Madison Avenue</div>
+                    <div>New York, NY 10075</div>
+                    <div></div>
+                  </address>
+
+                  <a
+                    class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline mt-12"
+                    href="#"
+                    target="_self"
+                    title="Learn more about Painter's Studio New York"
+                    id="painters-studio-new-york-link"
+                    aria-labelledby="painters-studio-new-york painters-studio-new-york-link"
+                  >
+                    <span class="w-18 justify-center hidden xs:flex">
+                      <svg
+                        class="fill-current"
+                        width="15"
+                        height="12"
+                        viewBox="0 0 15 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                        ></path></svg
+                    ></span>
+                    <span>Visit</span>
+                  </a>
+                </div>
+                <div
+                  class="sm:w-[calc(50%_-_9px)] md:w-[calc(33.3333%_-_12px)] xl:w-[calc(16.666667%_-_18px)] text-sm font-light"
+                >
+                  <h3 id="painters-studio-hong-kong">Hong Kong</h3>
+                  <address>
+                    <p>
+                      50 Connaught Road Central <br />
+                      Hong Kong
+                    </p>
+                  </address>
+
+                  <a
+                    class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline mt-12"
+                    href="#"
+                    target="_self"
+                    title="Learn more about Painter's Studio Hong Kong"
+                    id="painters-studio-hong-kong-link"
+                    aria-labelledby="painters-studio-hong-kong painters-studio-hong-kong-link"
+                  >
+                    <span class="w-18 justify-center hidden xs:flex">
+                      <svg
+                        class="fill-current"
+                        width="15"
+                        height="12"
+                        viewBox="0 0 15 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                        ></path></svg
+                    ></span>
+                    <span>Visit</span>
+                  </a>
+                </div>
+                <div
+                  class="sm:w-[calc(50%_-_9px)] md:w-[calc(33.3333%_-_12px)] xl:w-[calc(16.666667%_-_18px)] text-sm font-light"
+                >
+                  <h3 id="painters-studio-paris">Paris</h3>
+                  <address>
+                    <p>
+                      10 avenue Matignon <br />
+                      75008 Paris<br />
+                    </p>
+                  </address>
+
+                  <a
+                    class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline mt-12"
+                    href="#"
+                    target="_self"
+                    title="Learn more about Painter's Studio Paris"
+                    id="painters-studio-paris-link"
+                    aria-labelledby="painters-studio-paris painters-studio-paris-link"
+                  >
+                    <span class="w-18 justify-center hidden xs:flex">
+                      <svg
+                        class="fill-current"
+                        width="15"
+                        height="12"
+                        viewBox="0 0 15 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                        ></path></svg
+                    ></span>
+                    <span>Visit</span>
+                  </a>
+                </div>
+                <div
+                  class="sm:w-[calc(50%_-_9px)] md:w-[calc(33.3333%_-_12px)] xl:w-[calc(16.666667%_-_18px)] text-sm font-light"
+                >
+                  <h3 id="painters-studio-seoul">Seoul</h3>
+                  <address>
+                    <p>
+                      6, Dosan-daero 45-gil <br />
+                      Seoul<br />
+                    </p>
+                  </address>
+
+                  <a
+                    class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group focus-visible:underline mt-12"
+                    href="#"
+                    target="_self"
+                    title="Learn more about Painter's Studio Seoul"
+                    id="painters-studio-seoul-link"
+                    aria-labelledby="painters-studio-seoul painters-studio-seoul-link"
+                  >
+                    <span class="w-18 justify-center hidden xs:flex">
+                      <svg
+                        class="fill-current"
+                        width="15"
+                        height="12"
+                        viewBox="0 0 15 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                        ></path></svg
+                    ></span>
+                    <span>Visit</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid--centered py-40 md:py-80">
+          <div
+            class="col-span-full sm:col-span-8 sm:col-start-1 lg:col-span-3 lg:col-start-1 xl:col-span-6 xl:col-start-1 mb-40 lg:mb-0"
+          >
+            <h2 class="text-lg font-light mb-16">Newsletter</h2>
+            <p class="text-sm font-light mb-24">
+              Be the first to know about our events, exhibitions, artists and
+              much more
+            </p>
+            <a
+              class="text-14 3xl:text-15 font-medium inline-flex items-center gap-x-14 group"
+              href="#"
+              title="Click here to subscribe to our newsletter"
+              aria-label="Click here to subscribe to our newsletter"
+            >
+              <span class="w-18 flex justify-center">
+                <svg
+                  class="fill-current"
+                  width="15"
+                  height="12"
+                  viewBox="0 0 15 12"
+                  fill="none"
+                >
+                  <path
+                    d="M7.951 1.22621L11.5547 4.82909L0.257681 4.82892L0.257682 6.50579L11.5547 6.50562L7.951 10.1085L9.12473 11.2822L14.7388 5.66732L9.12473 0.0524227L7.951 1.22621Z"
+                  ></path></svg
+              ></span>
+              <span>Subscribe</span>
+            </a>
+          </div>
+          <div
+            class="col-span-full lg:col-span-8 lg:col-start-5 xl:col-span-12 xl:col-start-10"
+          >
+            <h2 class="text-lg font-light mb-16">Connect</h2>
+            <ul class="flex flex-wrap gap-24">
+              <li>
+                <a
+                  class="w-[140px] text-xs font-medium uppercase tracking-widest inline-flex items-center gap-x-14 group"
+                  target="_blank"
+                  href="#"
+                  title="Go to the Painter's Studio profile page on X"
+                  aria-label="Go to the Painter's Studio profile page on X"
+                  rel="nofollow"
+                >
+                  <svg
+                    class="fill-current h-[15px]"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <title>X</title>
+                    <path
+                      d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                    ></path>
+                  </svg>
+                  <span>X</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="w-[140px] text-xs font-medium uppercase tracking-widest inline-flex items-center gap-x-14 group"
+                  target="_blank"
+                  href="#"
+                  title="Go to the Painter's Studio profile page on Facebook"
+                  aria-label="Go to the Painter's Studio profile page on Facebook"
+                  rel="nofollow"
+                >
+                  <svg
+                    class="fill-current h-[15px]"
+                    width="16"
+                    height="15"
+                    viewBox="0 0 16 15"
+                    fill="none"
+                  >
+                    <path
+                      d="M15.3516 7.4901C15.3516 3.35693 11.9934 0.00585938 7.85156 0.00585938C3.70969 0.00585938 0.351562 3.35693 0.351562 7.4901C0.351562 11.226 3.09406 14.322 6.67969 14.8833V9.65367H4.77531V7.48948H6.67969V5.8417C6.67969 3.96627 7.79969 2.9297 9.51281 2.9297C10.3328 2.9297 11.1916 3.07627 11.1916 3.07627V4.91802H10.2453C9.31344 4.91802 9.02281 5.49493 9.02281 6.08681V7.4901H11.1028L10.7703 9.65429H9.02281V14.8839C12.6091 14.322 15.3516 11.2254 15.3516 7.4901ZM7.89985 8.37122L7.78833 10.5391C7.27551 11.0282 6.74305 11.283 6.16111 11.283C5.42367 11.283 4.86922 10.7167 4.86922 9.96964C4.86922 9.1603 5.33807 8.40861 7.89985 8.372V8.37122Z"
+                    ></path>
+                  </svg>
+                  <span>Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="w-[140px] text-xs font-medium uppercase tracking-widest inline-flex items-center gap-x-14 group"
+                  target="_blank"
+                  href="#"
+                  title="Go to the Painter's Studio profile page on TikTok"
+                  aria-label="Go to the Painter's Studio profile page on TikTok"
+                  rel="nofollow"
+                >
+                  <svg
+                    class="fill-current h-[15px]"
+                    width="14"
+                    height="16"
+                    viewBox="0 0 14 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M12.6636 4.18103C11.9147 4.02084 11.2366 3.62562 10.728 3.053C10.2195 2.48037 9.90714 1.76028 9.83652 0.997699V0.666992H7.25311V10.9196C7.25151 11.3735 7.10773 11.8155 6.84198 12.1835C6.57623 12.5515 6.20186 12.8269 5.77149 12.9712C5.34111 13.1154 4.87636 13.1211 4.44255 12.9876C4.00873 12.8541 3.62765 12.588 3.35287 12.2267C3.07382 11.8594 2.91902 11.4128 2.91092 10.9515C2.90283 10.4903 3.04186 10.0385 3.30785 9.66162C3.57384 9.28474 3.95296 9.00238 4.39024 8.85548C4.82752 8.70859 5.30023 8.7048 5.73981 8.84467V6.22002C4.75957 6.08451 3.7615 6.25878 2.88519 6.71845C2.00888 7.17812 1.29817 7.9002 0.852453 8.7837C0.406741 9.66719 0.248326 10.6679 0.399367 11.6459C0.550407 12.6238 1.00335 13.5301 1.69483 14.238C2.35427 14.9127 3.1998 15.3756 4.12351 15.5676C5.04721 15.7597 6.00719 15.6721 6.88089 15.316C7.7546 14.96 8.5024 14.3517 9.02883 13.5688C9.55527 12.7859 9.83646 11.8639 9.83652 10.9204V5.68159C10.8806 6.42799 12.1324 6.82822 13.4158 6.82594V4.25902C13.163 4.25933 12.911 4.2332 12.6636 4.18103Z"
+                    ></path>
+                  </svg>
+                  <span>TikTok</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="w-[140px] text-xs font-medium uppercase tracking-widest inline-flex items-center gap-x-14 group"
+                  target="_blank"
+                  href="#instagram.com/painters-studio/"
+                  title="Go to the Painter's Studio profile page on Instagram"
+                  aria-label="Go to the Painter's Studio profile page on Instagram"
+                  rel="nofollow"
+                >
+                  <svg
+                    class="fill-current h-[15px]"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10.9665 0.658203C12.2366 0.658203 13.3556 1.07815 14.1419 1.88804C14.9282 2.66794 15.3516 3.7478 15.3516 5.00763V11.1868C15.3516 12.4767 14.9282 13.5865 14.1116 14.3664C13.3253 15.1163 12.2366 15.5363 10.9362 15.5363H4.76689C3.52697 15.5363 2.43826 15.1463 1.62173 14.3664C0.77495 13.5565 0.351562 12.4466 0.351562 11.1568V5.00763C0.351562 2.39798 2.1056 0.658203 4.73664 0.658203H10.9665ZM13.1439 13.3765C13.6882 12.8666 14.0209 12.1167 14.0209 11.1868V5.00763C14.0209 4.13775 13.7185 3.38784 13.2044 2.84792C12.66 2.30798 11.904 2.03802 10.9967 2.03802H4.76689C3.85963 2.03802 3.07334 2.30798 2.55923 2.81792C2.01487 3.35785 1.74269 4.10775 1.74269 5.00763V11.1568C1.74269 12.0867 2.01487 12.8366 2.55923 13.3765C3.10357 13.8865 3.85963 14.1564 4.76689 14.1564H10.9362C11.8435 14.1564 12.5995 13.8865 13.1439 13.3765ZM11.8741 5.00735C12.3585 5.00735 12.7511 4.61789 12.7511 4.13747C12.7511 3.65704 12.3585 3.26758 11.8741 3.26758C11.3898 3.26758 10.9971 3.65704 10.9971 4.13747C10.9971 4.61789 11.3898 5.00735 11.8741 5.00735ZM7.85168 4.22788C5.73474 4.22788 3.98071 5.93766 3.98071 8.06738C3.98071 10.1971 5.7045 11.9068 7.85168 11.9068C9.99881 11.9068 11.7227 10.1671 11.7227 8.06738C11.7227 5.96766 9.96863 4.22788 7.85168 4.22788ZM7.85168 10.5271C6.49079 10.5271 5.37185 9.4172 5.37185 8.06738C5.37185 6.71756 6.49079 5.6077 7.85168 5.6077C9.21257 5.6077 10.3315 6.71756 10.3315 8.06738C10.3315 9.4172 9.21257 10.5271 7.85168 10.5271Z"
+                    ></path>
+                  </svg>
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="w-[140px] text-xs font-medium uppercase tracking-widest inline-flex items-center gap-x-14 group"
+                  target="_blank"
+                  href="#"
+                  title="Go to the Painter's Studio profile page on YouTube"
+                  aria-label="Go to the Painter's Studio profile page on YouTube"
+                  rel="nofollow"
+                >
+                  <svg
+                    class="fill-current h-[15px]"
+                    width="16"
+                    height="12"
+                    viewBox="0 0 16 12"
+                    fill="none"
+                  >
+                    <path
+                      d="M14.9329 2.54892C14.7942 1.78977 14.1335 1.23694 13.3668 1.06434C12.2194 0.822984 10.096 0.650391 7.79855 0.650391C5.50246 0.650391 3.34505 0.822984 2.19632 1.06434C1.43096 1.23694 0.76891 1.75472 0.630247 2.54892C0.490225 3.41188 0.351562 4.62003 0.351562 6.17337C0.351562 7.72671 0.490225 8.93486 0.664233 9.79783C0.804254 10.557 1.46494 11.1098 2.23031 11.2824C3.44836 11.5238 5.53645 11.6964 7.8339 11.6964C10.1313 11.6964 12.2194 11.5238 13.4375 11.2824C14.2028 11.1098 14.8636 10.592 15.0035 9.79783C15.1422 8.93486 15.3162 7.69165 15.3516 6.17337C15.2809 4.62003 15.1069 3.41188 14.9329 2.54892ZM5.91981 8.58968V3.75707L10.1653 6.17337L5.91981 8.58968Z"
+                    ></path>
+                  </svg>
+                  <span>YouTube</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="w-[140px] text-xs font-medium uppercase tracking-widest inline-flex items-center gap-x-14 group"
+                  target="_blank"
+                  href="#artsy.net/partner/painters-studio"
+                  title="Go to the Painter's Studio profile page on Artsy"
+                  aria-label="Go to the Painter's Studio profile page on Artsy"
+                  rel="nofollow"
+                >
+                  <svg
+                    class="fill-current h-[15px]"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M0.351562 0.00585938V15.2411H15.7117V0.00585938H0.351562ZM1.45976 1.11321H14.6033V14.1335H12.2713V11.1523H11.1727V14.1335H1.45957V1.11321H1.45976ZM5.3293 2.67872L3.07081 8.44443H4.23864L4.84872 6.82166H7.03796L7.63902 8.44443H8.80742L6.54893 2.67872H5.32937H5.3293ZM5.89122 3.84334L6.632 5.848H5.14078L5.8912 3.84334H5.89122Z"
+                    ></path>
+                  </svg>
+                  <span>Artsy</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="w-[140px] text-xs font-medium uppercase tracking-widest inline-flex items-center gap-x-14 group"
+                  target="_blank"
+                  href="#"
+                  title="Go to the Painter's Studio profile page on Artnet"
+                  aria-label="Go to the Painter's Studio profile page on Artnet"
+                  rel="nofollow"
+                >
+                  <svg
+                    class="fill-current h-[15px]"
+                    width="13"
+                    height="15"
+                    viewBox="0 0 13 15"
+                    fill="none"
+                  >
+                    <path
+                      d="M6.84671 0.191406C5.47158 0.191406 4.10901 0.380692 3.11399 0.713306C2.29881 0.985941 1.64619 1.34582 1.64619 1.34582L2.85875 4.4149L3.86399 3.98804C5.01687 3.61258 5.79828 3.57675 6.57577 3.57675C7.65954 3.57675 7.85038 3.8821 7.88336 4.96874L7.85116 5.41197C5.68755 5.44936 4.48205 5.65111 3.19331 6.18703C1.45692 6.9099 0.578125 8.23256 0.578125 10.1426C0.578125 12.7303 2.4009 14.4144 5.21949 14.4144C6.49802 14.4144 7.48833 14.0981 8.47315 13.3542L8.52106 13.3067L9.11085 14.6356L12.9229 13.2116L12.6355 12.5316C12.1588 11.5283 12.0614 10.9106 12.0614 9.8894L12.1572 4.71558C12.1572 3.93585 12.1273 3.47548 11.9656 2.94346C11.419 1.17523 9.5365 0.191406 6.84671 0.191406ZM7.89985 8.37122L7.78833 10.5391C7.27551 11.0282 6.74305 11.283 6.16111 11.283C5.42367 11.283 4.86922 10.7167 4.86922 9.96964C4.86922 9.1603 5.33807 8.40861 7.89985 8.372V8.37122Z"
+                    ></path>
+                  </svg>
+                  <span>Artnet</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="w-[140px] text-xs font-medium uppercase tracking-widest inline-flex items-center gap-x-14 group"
+                  up-layer="new"
+                  up-target="[up-id=wechat]"
+                  up-class="centered"
+                  href="#"
+                  title="Go to the Painter's Studio profile page on WeChat"
+                  aria-label="Go to the Painter's Studio profile page on WeChat"
+                  rel="nofollow"
+                >
+                  <svg
+                    class="fill-current h-[15px]"
+                    width="16"
+                    height="13"
+                    viewBox="0 0 16 13"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M12.3349 8.02109C11.9948 8.02109 11.7227 7.74685 11.7227 7.40403C11.7227 7.06121 11.9948 6.78697 12.3349 6.78697C12.6751 6.78697 12.9472 7.06121 12.9472 7.40403C12.9472 7.7297 12.6751 8.02109 12.3349 8.02109ZM9.31748 8.02109C8.97734 8.02109 8.70524 7.74685 8.70524 7.40403C8.70524 7.06121 8.97734 6.78697 9.31748 6.78697C9.65762 6.78697 9.92972 7.06121 9.92972 7.40403C9.92972 7.7297 9.65762 8.02109 9.31748 8.02109ZM13.7951 11.4846C14.7496 10.7922 15.3524 9.76206 15.3524 8.63052C15.3524 6.53645 13.343 4.84766 10.8481 4.84766C8.35312 4.84766 6.34375 6.53645 6.34375 8.63052C6.34375 10.7246 8.35312 12.4134 10.8481 12.4134C11.3672 12.4134 11.8528 12.3459 12.3216 12.2108C12.3551 12.1939 12.4053 12.1939 12.4556 12.1939C12.5393 12.1939 12.623 12.2276 12.69 12.2614L13.6779 12.8356C13.7114 12.8525 13.7282 12.8694 13.7617 12.8694C13.7815 12.8695 13.8011 12.8656 13.8195 12.858C13.8378 12.8504 13.8544 12.8392 13.8684 12.825C13.8824 12.8109 13.8935 12.7941 13.9011 12.7756C13.9086 12.7572 13.9125 12.7374 13.9124 12.7174C13.9124 12.6836 13.8956 12.6498 13.8956 12.5992C13.8956 12.5823 13.7617 12.1263 13.6947 11.8392C13.6779 11.8054 13.6779 11.7717 13.6779 11.7379C13.6612 11.6197 13.7114 11.5353 13.7951 11.4846Z"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M7.5235 4.45064C7.13298 4.45064 6.8238 4.13903 6.8238 3.74543C6.8238 3.35184 7.13298 3.04023 7.5235 3.04023C7.91402 3.04023 8.2232 3.35184 8.2232 3.74543C8.2232 4.12263 7.91402 4.45064 7.5235 4.45064ZM3.93753 4.45064C3.54701 4.45064 3.23783 4.13903 3.23783 3.74543C3.23783 3.35184 3.54701 3.04023 3.93753 3.04023C4.32805 3.04023 4.63723 3.35184 4.63723 3.74543C4.63723 4.12263 4.32805 4.45064 3.93753 4.45064ZM5.7725 0.660156C2.78504 0.660156 0.351562 2.683 0.351562 5.19463C0.351562 6.56009 1.07322 7.79063 2.23127 8.61665C2.31519 8.68408 2.38231 8.78519 2.38231 8.92006C2.38231 8.95374 2.36552 9.00434 2.36552 9.03805C2.2816 9.37519 2.13055 9.93146 2.11376 9.9483C2.09701 9.9989 2.08022 10.0326 2.08022 10.0832C2.08022 10.1843 2.16414 10.2686 2.26481 10.2686C2.29839 10.2686 2.33194 10.2518 2.36552 10.2349L3.55711 9.54377C3.64103 9.49318 3.74175 9.45946 3.84242 9.45946C3.89279 9.45946 3.94313 9.45946 3.99346 9.47634C4.54732 9.62805 5.15147 9.72916 5.75571 9.72916H6.0578C5.9403 9.37519 5.87317 9.00434 5.87317 8.6166C5.87317 6.34095 8.08851 4.48669 10.8074 4.48669H11.1095C10.7235 2.3121 8.47453 0.660156 5.7725 0.660156Z"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M7.5235 4.45064C7.13298 4.45064 6.8238 4.13903 6.8238 3.74543C6.8238 3.35184 7.13298 3.04023 7.5235 3.04023C7.91402 3.04023 8.2232 3.35184 8.2232 3.74543C8.2232 4.12263 7.91402 4.45064 7.5235 4.45064ZM3.93753 4.45064C3.54701 4.45064 3.23783 4.13903 3.23783 3.74543C3.23783 3.35184 3.54701 3.04023 3.93753 3.04023C4.32805 3.04023 4.63723 3.35184 4.63723 3.74543C4.63723 4.12263 4.32805 4.45064 3.93753 4.45064ZM5.7725 0.660156C2.78504 0.660156 0.351562 2.683 0.351562 5.19463C0.351562 6.56009 1.07322 7.79063 2.23127 8.61665C2.31519 8.68408 2.38231 8.78519 2.38231 8.92006C2.38231 8.95374 2.36552 9.00434 2.36552 9.03805C2.2816 9.37519 2.13055 9.93146 2.11376 9.9483C2.09701 9.9989 2.08022 10.0326 2.08022 10.0832C2.08022 10.1843 2.16414 10.2686 2.26481 10.2686C2.29839 10.2686 2.33194 10.2518 2.36552 10.2349L3.55711 9.54377C3.64103 9.49318 3.74175 9.45946 3.84242 9.45946C3.89279 9.45946 3.94313 9.45946 3.99346 9.47634C4.54732 9.62805 5.15147 9.72916 5.75571 9.72916H6.0578C5.9403 9.37519 5.87317 9.00434 5.87317 8.6166C5.87317 6.34095 8.08851 4.48669 10.8074 4.48669H11.1095C10.7235 2.3121 8.47453 0.660156 5.7725 0.660156Z"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.9861 1.05096C13.9861 0.987483 13.9846 0.923974 13.9863 0.860554C13.994 0.574957 14.2056 0.366038 14.4878 0.364268C14.7655 0.362528 14.9819 0.574657 14.9922 0.858664C15.0025 1.14153 14.8036 1.37187 14.525 1.3893C14.3827 1.39821 14.2394 1.39053 14.0966 1.39257C14.0161 1.39371 13.9812 1.35777 13.9846 1.27707C13.9878 1.20183 13.9853 1.12635 13.9853 1.05096C13.9856 1.05096 13.9858 1.05096 13.9861 1.05096Z"
+                    ></path>
+                  </svg>
+                  <span lang="zh-Hans">小红书</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-grey border-t border-grey-dark">
+          <div class="grid--centered py-24 pb-90 md:pb-24">
+            <div
+              class="col-span-full flex flex-col md:flex-row justify-between gap-y-24 gap-x-20 text-xs font-light uppercase"
+            >
+              <div up-nav="" class="flex gap-x-44">
+                <ul class="flex flex-col md:flex-row gap-y-12 gap-x-44">
+                  <li>
+                    <a href="#">Website Accessibility</a>
+                  </li>
+                  <li>
+                    <a href="#">Visitor Guidelines</a>
+                  </li>
+                  <li>
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#">Cookie Policy</a>
+                  </li>
+                  <li>
+                    <a href="#">Terms of Use</a>
+                  </li>
+                  <li>
+                    <a href="#">Modern Slavery Statement</a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="iubenda-cs-preferences-link flex items-start gap-x-8"
+                      >Your Privacy Choices</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <p>Artworks � the Artist. � 2025 Painter's Studio</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div up-id="cpEditUrl" up-hungry=""></div>
+  </body>
+</html>
